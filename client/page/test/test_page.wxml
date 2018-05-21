@@ -1,0 +1,91 @@
+<!--pages/BrandHomepage/BrandHomepage.wxml-->
+
+<scroll-view class='scrollview' scroll-y enable-back-to-top='true' style="height: {{windowHeight}}px;">
+
+<view class='header'>
+  <view class='banner' style='background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524471504&di=087f645b0b60bc7fbb1c0b4a915621b0&imgtype=jpg&er=1&src=http%3A%2F%2Fimages.xiustatic.com%2Fcms%2Fnoregular%2F2016%2F04%2F13%2F1a7acc95-3fe5-4caa-a9c1-06d5e6511297.jpg); background-size: 100%;'></view>
+  <view class='search'>
+    <view class='input'>搜索品牌内商品</view>
+  </view>
+  <view class='logo'>
+    <image mode='aspectFit' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523434671716&di=1d59499b22107e82c4dd06a66b59d4a4&imgtype=0&src=http%3A%2F%2Fpic.secoo.com%2FdetailImg%2F15%2F6%2F874d5b830e774d6fa227eefda5c92feb.jpg'></image>
+  </view>
+  <view class='title'>ASPINAL OF LONDON</view>
+  <view class='followedbtn' wx:if='{{follow}}' bindtap='onFollow'><view class='icon'></view><view class='label'>已关注</view></view>
+  <view class='followbtn' wx:else bindtap='onFollow'>+  关注品牌</view>  
+  <view class='favornumber'>456 被关注</view>
+  <view class='desc'>
+    <view class='content'>
+      <view class='quotation'></view>
+      <view class="{{ expandDesc ? 'descdetail' : 'descthumb' }}">Aspinal of London，源自伦敦的高端本土包包品牌，因凯特王妃的青睐在英国大受欢迎，最近与大幂幂合作推出的限量版“杨幂包”又让Aspinal of London在国内风靡起来。全部皮具都由纯正老工匠手工制作而成。该品牌成立至今也不过15年左右，但是靠着独特的英伦气质和有质感而又知性的小皮件设计，在全球众多大牌包包的强势围攻下杀出重围，独领风骚。</view>
+      <view class='expand' bindtap='onExpand' wx:if='{{!expandDesc}}'></view>
+    </view>
+    <view class='collapse' bindtap='onCollapse' wx:if='{{expandDesc}}'></view>    
+  </view>
+</view>
+
+<view class='content'>
+
+  <view class='tabs'>
+    <view class='active'>默认</view>
+    <view>销量</view>
+    <view>新品</view>
+    <view class='price'>
+      <view class='label'>价格</view>
+      <view class='icon'></view>
+    </view>
+    <view class='filter'>
+      <view class='border'></view>
+      <view class='active'>筛选</view>
+      <view class='hidden-border'></view>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view wx:for="{{[1,2,3,4,5,6]}}" class='item-row'>
+      <!-- goods item -->
+      <view class='goods-item'>
+        <view class='thumb' style='background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523527482695&di=1db6e487b00299c32e6f26a0886f19f6&imgtype=0&src=http%3A%2F%2Fpic12.secooimg.com%2Fimgextra%2F1%2F0%2F57%2F10%2F1TkV1f9ee8adf81891405e89f21b57edd1d0f3.jpg); background-size: 100%;'>
+          <view class='cornermark' wx:if="{{false}}">即将开始</view>
+        </view>
+        <view class='overview'>
+          <view class='desc'>
+            <view class='title'>Aspinal of London新款牛皮迷你手拿钱包 奢华优雅卡包 Aspinal of London</view>
+            <view class='labels'>
+              <view class='label'>限时折</view>
+            </view>
+          </view>
+          <view class='price'>
+            <view class='sale-price'>¥ 98.80</view>
+            <view class='market-price'>吊牌价 ¥328.00</view>
+          </view>
+        </view>
+      </view>
+      <!-- news item -->
+      <view class='news-item'>
+        <view class='bgrd'>
+          <view class='poster' style='background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523858234611&di=800e8743bea5141417a2f18d98df23af&imgtype=0&src=http%3A%2F%2Fpic.makepolo.net%2Fnews%2Fallimg%2F20161231%2F1483189904622378.jpg); background-size: 100%;'>
+            <view class='cornermark' wx:if="{{true}}">即将开始</view>
+          </view>
+          <view class='desc'>
+            <view class='brandname'>
+              <view class='b1'></view>
+              <view class='b2'>Aspinal of London</view>
+              <view class='b1'></view>
+            </view>
+            <view class='title'>复古英伦风范皮革界资深工匠倾情打造</view>
+            <view class='period'>2018.08.29 - 2018.09.30</view>
+          </view>
+        </view>
+      </view>    
+    </view>
+    <view class='nomore' wx:if="{{true}}">
+      <view class='e1'></view><view class='label'>END</view><view class='e1'></view>
+    </view>
+  </view> <!-- end of list -->
+
+</view> <!-- end of content -->
+
+<!-- <view class="backtop" bindtap="backTop" hidden="{{backT}}"></view> -->
+
+</scroll-view>
